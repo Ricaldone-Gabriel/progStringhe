@@ -32,16 +32,39 @@ public class ProgStringhe {
         
         System.out.println("Mi dia la prima stringa");
         str1 = input.nextLine();
+        strTemp = str1.toLowerCase();
         System.out.println("Mi dia la seconda stringa");
         str2 = input.nextLine();
 
+        //Il gatto sopra il gatto salta sul cane che mangia un cane.
+        //+ (str1.length()-strTemp.length() )
         do {
-            strTemp = str1.substring(posTemp); //staffa raffa willy  CIAO
-            posizione[i] = strTemp.indexOf(str2); //0
-            posTemp = posizione[i] + str2.length();  // PosTemp = 0 + 4
+            posizione[i] = (strTemp.indexOf(str2)) + (str1.length()-strTemp.length() ); //0
+            posTemp = strTemp.indexOf(str2) + str2.length();  // PosTemp = 0 + 4
+            strTemp = strTemp.substring(posTemp); //staffa raffa willy  CIAO
             i++;
         } while (strTemp.contains(str2));
+        for (int j = 0; j < i; j++) {
+            System.out.println(str1.substring(posizione[j],posizione[j]+str2.length()));
+        }
+        //**************************************************************************
+        String strArray[];
+        strArray = new String[10];
+        int max = -2,posI = 0;
+        for (i=0; i < 10; i++) {
+            System.out.println("Dammi stringa n." + i);
+            strArray[i] = input.nextLine();
+        }
+        for (i=0; i < 10; i++) {
+            if (strArray[i].length() > max) {
+                max = strArray[i].length();
+                posI = i;
+            }
+        }
         
+        System.out.println("La stringa più lunga è " + strArray[posI] + " Lunga: " + max);
+        //Permettere all'utente di inserire 10 testi in un array 
+        //di stringhe e visualizzare quella di lunghezza maggiore
     }
     
     
