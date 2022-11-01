@@ -35,6 +35,7 @@ public class ProgStringhe {
         strTemp = str1.toLowerCase();
         System.out.println("Mi dia la seconda stringa");
         str2 = input.nextLine();
+        str2 = str2.toLowerCase();
 
         //Il gatto sopra il gatto salta sul cane che mangia un cane.
         //+ (str1.length()-strTemp.length() )
@@ -44,15 +45,17 @@ public class ProgStringhe {
             strTemp = strTemp.substring(posTemp); //staffa raffa willy  CIAO
             i++;
         } while (strTemp.contains(str2));
+        
+        System.out.println("La parola: " + str2 + " è stata individuata nei punti: ");
         for (int j = 0; j < i; j++) {
-            System.out.println(str1.substring(posizione[j],posizione[j]+str2.length()));
+            System.out.print(posizione[j] + " ");
         }
         //**************************************************************************
         String strArray[];
         strArray = new String[10];
         int max = -2,posI = 0;
         for (i=0; i < 10; i++) {
-            System.out.println("Dammi stringa n." + i);
+            System.out.println("Dammi stringa n." + (i + 1));
             strArray[i] = input.nextLine();
         }
         for (i=0; i < 10; i++) {
